@@ -2,13 +2,11 @@
 
 RSS Proxy exposes an API for retrieving RSS feeds, and includes caching to increase speed.
 
-Use cases:
-- Use RSS feeds in your client-side JavaScript (rather difficult to do without a proxy)
-- Speed up your existing RSS retrieval scenarios with simple caching
+**Key use case**: Access RSS feeds from your client-side JavaScript easily and quickly
 
 ## Usage
 
-RSS Proxy accepts GET requests for RSS feeds, and allows URL and number of articles to specified per request.
+Request the contents of an RSS feed.
 
 ### Direct
 
@@ -31,8 +29,6 @@ Parameter | Description
 `key`     | If you set a key with the `API_KEY` configuration variable, this must match that key for the request to be processed.
 
 ### Results
-
-**Fill in results here**
 
 ```javascript
 {
@@ -63,7 +59,7 @@ Parameter | Description
 
 ## Configuration variables
 
-Only the REDIS_URL is required. If you use the Deploy to Heroku button below, you'll be prompted for these.
+Only the REDIS_URL is required, and it's automatically filled if use the Deploy to Heroku button below. If you use the Deploy to Heroku button, you'll be prompted for these.
 
 Config Variable | Description
 --------------- | -----------
@@ -81,7 +77,7 @@ Config Variable | Description
 
 Heroku deployment is easy and free using the button below. It includes the app itself and a Redis server.
 
-You may get an internal server error for the first few minutes while Redis loads.
+The app will return an Internal Server Error for the first few minutes while Redis loads.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
