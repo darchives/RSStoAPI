@@ -2,11 +2,19 @@
 
 RSS Proxy exposes an API for retrieving RSS feeds, and includes caching to increase speed.
 
-**Key use case**: Access RSS feeds from your client-side JavaScript easily and quickly
+**Key use case**: Access RSS feeds from your client-side JavaScript easily and quickly.
+
+## Caching
+
+RSS Proxy caches feeds as they're retrived, using Redis. 
+
+The cache lasts for an hour by default. That is, an individual feed will be retrieved from its source only once per hour, despite the number of requests.
+
+If a request comes in that cannot be served from cache, the app retrieves the feed and returns it.
 
 ## Usage
 
-Request the contents of an RSS feed.
+Retrieve the contents of an RSS feed.
 
 ### Direct
 
