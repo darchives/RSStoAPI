@@ -22,6 +22,8 @@ Retrieve the contents of an RSS feed.
 
 ### JQuery
 
+[Demo](http://codepen.io/csm123/pen/KddKzW)
+
 ```javascript
 $.ajax(
   {url: "https://DOMAIN_FOR_THIS_APP/v1/feed?url=http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml&count=8&key=YOUR_KEY"})
