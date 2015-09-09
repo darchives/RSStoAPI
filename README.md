@@ -26,10 +26,14 @@ Retrieve the contents of an RSS feed.
 
 ```javascript
 $.ajax(
-  {url: "https://DOMAIN_FOR_THIS_APP/v1/feed?url=http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml&count=8&key=YOUR_KEY"})
-.done(function(data) {
-  alert("Found " + data.items.length + " items");
-});
+  {
+    url: "https://DOMAIN_FOR_THIS_APP/v1/feed?url=http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml&count=8&key=YOUR_KEY"
+  }
+).done(
+  function(data) {
+    alert("Found " + data.items.length + " items");
+  }
+);
 ```
 
 Parameter | Description
