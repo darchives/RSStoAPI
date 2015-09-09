@@ -4,6 +4,16 @@ RSS Proxy exposes an API for retrieving RSS feeds, and includes caching to incre
 
 **Key use case**: Access RSS feeds from your client-side JavaScript easily and quickly.
 
+## Why this exists
+
+Retrieving RSS feeds directly through JavaScript generally does not work due to cross-domain restrictions. 
+
+The Google Feed API provides an easy way to retrieve feeds through JavaScript, but it's officially deprecated and will likely disappear sometime soon.
+
+There are few alternatives to the Google Feed API. The Feedly API is great, but it doesn't work directly from JavaScript and it's rate-limited like any public API.
+
+To retrieve RSS feeds through JavaScript, then, you're forced to host your own proxy. RSS Proxy makes this a one-click process, thorugh the Deploy to Heroku button below. In no time, you'll be retrieving RSS through JavaScript. You'll benefit from caching, as well, so feeds pop up quickly for your users.
+
 ## Caching
 
 RSS Proxy caches feeds as they're retrived, using Redis. 
