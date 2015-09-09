@@ -22,7 +22,7 @@ Retrieve the contents of an RSS feed.
 
 ### JQuery
 
-[Demo](http://codepen.io/csm123/pen/KddKzW)
+[Demo](http://codepen.io/csm123/pen/KddKzW?editors=101)
 
 ```javascript
 $.ajax(
