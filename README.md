@@ -12,7 +12,7 @@ The Google Feed API provides an easy way to retrieve feeds through JavaScript, b
 
 There are few alternatives to the Google Feed API. The Feedly API is great, but it doesn't work directly from JavaScript and it's rate-limited like any public API.
 
-To retrieve RSS feeds through JavaScript, then, you're forced to host your own proxy. RSS Proxy makes this a one-click process, thorugh the Deploy to Heroku button below. In no time, you'll be retrieving RSS through JavaScript. You'll benefit from caching, as well, so feeds pop up quickly for your users.
+To retrieve RSS feeds through JavaScript, then, you're forced to host your own proxy. RSS Proxy makes this a one-click process, through the Deploy to Heroku button below. In no time, you'll be retrieving RSS through JavaScript. You'll benefit from caching, as well, so feeds pop up quickly for your users.
 
 ## Caching
 
