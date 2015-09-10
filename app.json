@@ -10,10 +10,11 @@
     },
     "ALLOW_ALL_ORIGINS": {
       "description": "Set to true to allow any domain to submit cross-domain requests to this app. Not recommended.",
-      "required": false
+      "required": false,
+      "value": "false"
     },
     "API_KEY": {
-      "description": "Set a key that will be required to make a request to this API.",
+      "description": "Set your own key that will be required to make a request to this API.",
       "required": false
     },
     "DEFAULT_COUNT": {
