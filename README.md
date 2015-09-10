@@ -1,5 +1,7 @@
 # RSS Proxy
 
+[![Circle CI](https://circleci.com/gh/csm123/RSSProxy.svg?style=svg)](https://circleci.com/gh/csm123/RSSProxy)
+
 RSS Proxy exposes an API for retrieving RSS feeds, and includes caching to increase speed.
 
 **Key use case**: Access RSS feeds from your client-side JavaScript easily and quickly.
