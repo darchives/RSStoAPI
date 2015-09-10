@@ -69,7 +69,7 @@ Parameter | Description
         "published": "Date that article was published"
       }
     ],
-  "from_proxy_cache": "true" /* true if from serving this feed from cache */
+  "from_proxy_cache": true /* true if from serving this feed from cache; otherwise, false */
 }
 ```
 
