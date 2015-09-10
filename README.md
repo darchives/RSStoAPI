@@ -16,7 +16,7 @@ To retrieve RSS feeds through JavaScript, then, you're forced to host your own p
 
 ## Caching
 
-RSS Proxy caches feeds as they're retrived, using Redis. 
+RSS Proxy caches feeds as they're retrieved, using Redis. A Redis server is included when using the Deploy to Heroku button below.
 
 The cache lasts for an hour by default. That is, an individual feed will be retrieved from its source only once per hour, despite the number of requests.
 
