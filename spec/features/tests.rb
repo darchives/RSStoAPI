@@ -31,9 +31,9 @@ context 'External request' do
   it 'uses the cache for subsequent requests' do
     get "/v1/feed?url=http://fakedomain.com/feed.xml&count=5"
     json = JSON.parse(last_response.body)
-    expect(json["from_proxy_cache"]).to eq nil
+    expect(json["from_proxy_cache"]).to eq false
     get "/v1/feed?url=http://fakedomain.com/feed.xml&count=5"
     json = JSON.parse(last_response.body)
-    expect(json["from_proxy_cache"]).to eq "true"
+    expect(json["from_proxy_cache"]).to eq true
   end
 end

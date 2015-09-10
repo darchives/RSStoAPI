@@ -3,6 +3,7 @@ class RSSRelay < Sinatra::Application
   require "open-uri"
   require "rss"
 
+  # This app requries a Redis server, specified in REDIS_URL config variable or locally 
   redis = (ENV["REDIS_URL"] && Redis.new(:url => ENV["REDIS_URL"])) || Redis.new
 
   get "/v1/feed" do
@@ -48,14 +49,17 @@ class RSSRelay < Sinatra::Application
 
     # If the cache can serve the requested number of items, serve them from cache
     if cached_items && number_of_items_cached >= number_of_items_requested
-      parsed_cached_items["from_proxy_cache"] = "true"
-      parsed_cached_items["items"] = parsed_cached_items["items"][0, number_of_items_requested]
+      parsed_cached_items["from_proxy_cache"] = true
+      parsed_cached_items["items"] = parsed_cached_items["items"][0, 
+        number_of_items_requested]
       return parsed_cached_items.to_json
 
     # Otherwise, retrieve the feed directly
     else
+
       items = nil
 
+      # Retrieve and parse the feed from the URL provided
       open(params[:url]) do |rss|
         feed = RSS::Parser.parse(rss, false)
         items = feed.items.map{|item| 
@@ -72,18 +76,22 @@ class RSSRelay < Sinatra::Application
         }
       end
 
+      # Get the number of items to cache, from a config variable or the default of 25
       number_of_items_to_cache = (ENV["NUMBER_OF_ITEMS_TO_CACHE_PER_FEED"] || 25).to_i
 
-      # Cache 100 items
       items_to_cache = {:items => items[0, number_of_items_to_cache]}
-      items_to_return = {:items => items[0, number_of_items_requested]}
+      items_to_return = {:items => items[0, number_of_items_requested], 
+        :from_proxy_cache => false}
 
+      # Get the cache life in seconds, from a config variable or the default of 3600
       cache_life = (ENV["CACHE_LIFE"] || 3600).to_i
 
+      # Cache items with Redis. Instruct Redis to expire items after cache_life has passed.
       if items
         redis.setex "items:#{params[:url]}", cache_life, items_to_cache.to_json
       end
 
+      # Return the feed contents
       return items_to_return && items_to_return.to_json
     end
   end
