@@ -1,8 +1,6 @@
-# RSS Proxy
+# RSS to API
 
-[![Circle CI](https://circleci.com/gh/csm123/RSSProxy.svg?style=svg)](https://circleci.com/gh/csm123/RSSProxy)
-
-RSS Proxy exposes an API for retrieving RSS feeds, and includes caching to increase speed.
+RSS to API exposes an API for retrieving RSS feeds, and includes caching to increase speed.
 
 **Key use case**: Access RSS feeds from your client-side JavaScript easily and quickly.
 
@@ -14,11 +12,11 @@ The Google Feed API provides an easy way to retrieve feeds through JavaScript, b
 
 There are few alternatives to the Google Feed API. The Feedly API is great, but it doesn't work directly from JavaScript and it's rate-limited like any public API.
 
-To retrieve RSS feeds through JavaScript, then, you're forced to host your own proxy. RSS Proxy makes this a one-click process, through the Deploy to Heroku button below. In no time, you'll be retrieving RSS through JavaScript. You'll benefit from caching, as well, so feeds pop up quickly for your users.
+To retrieve RSS feeds through JavaScript, then, you're forced to host your own proxy. RSS to API makes this a one-click process, through the Deploy to Heroku button below. In no time, you'll be retrieving RSS through JavaScript. You'll benefit from caching, as well, so feeds pop up quickly for your users.
 
 ## Caching
 
-RSS Proxy caches feeds as they're retrieved, using Redis. A Redis server is included when using the Deploy to Heroku button below.
+RSS to API caches feeds as they're retrieved, using Redis. A Redis server is included when using the Deploy to Heroku button below.
 
 The cache lasts for an hour by default. That is, an individual feed will be retrieved from its source only once per hour, despite the number of requests.
 
