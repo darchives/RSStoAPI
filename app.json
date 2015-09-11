@@ -1,7 +1,7 @@
 {
-  "name": "RSS Proxy",
+  "name": "RSS to API",
   "description": "Exposes a JavaScript-friendly API for retrieving RSS feeds, and caches feeds using Redis for quicker response times.",
-  "repository": "https://github.com/csm123/FeedlyAPIProxy",
+  "repository": "https://github.com/csm123/RSStoAPI",
   "keywords": ["rss"],
   "env": {
     "ORIGINS": {
