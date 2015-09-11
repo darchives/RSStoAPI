@@ -22,6 +22,8 @@ The cache lasts for an hour by default. That is, an individual feed will be retr
 
 If a request comes in that cannot be served from cache, the app retrieves the feed and returns it.
 
+**For caching to work most effectively, include a count (i.e. how many articles to retrieve) in every request.**
+
 ## Usage
 
 Retrieve the contents of an RSS feed.
