@@ -115,3 +115,4 @@ The app will return an Internal Server Error for the first few minutes while Red
 
 - Ruby
 - Sinatra
+- Redis
